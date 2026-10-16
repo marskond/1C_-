@@ -11,3 +11,6 @@
 node test.js
 Ожидаемый результат
 OK: rules, invitation isolation, complete game, receipt, persistence
+
+Ссылка на видео с демонстрацией результата
+https://drive.google.com/file/d/1EtyRXa70UDjFAzsbCYOLW9cCn8J1TfRy/view?usp=share_link
