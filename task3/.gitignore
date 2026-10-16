@@ -1,0 +1,4 @@
+   # Файлы состояния сервера и сессий клиентов
+   tva-state.json
+   tva-state.json.tmp
+   loki-*.session.json

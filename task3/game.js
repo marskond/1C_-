@@ -1,0 +1,6 @@
+'use strict';
+function win(board,mark){return [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]].some(line=>line.every(i=>board[i]===mark))}
+function newGame(id,variantId,starter){if(!['mobius','loki'].includes(starter))throw Error('Invalid starter');return {id,variantId,starter,status:'invited',turn:starter,board:Array(9).fill(null),moves:[],pending:null}}
+function play(game,actor,cell){if(game.status!=='active')throw Error('Game is not active');if(game.pending)throw Error('Waiting for Loki delivery acknowledgement');if(game.turn!==actor)throw Error('Not your turn');if(!Number.isInteger(cell)||cell<1||cell>9||game.board[cell-1])throw Error('Choose a free cell from 1 to 9');const mark=actor===game.starter?'X':'O';game.board[cell-1]=mark;game.moves.push({number:game.moves.length+1,actor,cell,mark});if(win(game.board,mark))game.status=actor+'_win';else if(game.board.every(Boolean))game.status='draw';else game.turn=actor==='mobius'?'loki':'mobius';if(game.status!=='active')game.turn=null;return game}
+function stats(games,variantId){const completed=games.filter(g=>g.variantId===variantId&&['mobius_win','loki_win','draw'].includes(g.status));const wins=completed.filter(g=>g.status==='loki_win').length;return {wins,completed:completed.length,winRate:completed.length?wins/completed.length:0}}
+module.exports={newGame,play,stats,win};
