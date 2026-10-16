@@ -5,6 +5,11 @@
 ## Описание
 Клиент-серверное приложение для игры в крестики-нолики между Мобиусом и вариантами Локи. Реализованы механизмы подтверждения доставки ходов (ack), агрегированной статистики для "разжигания зависти" и изоляции вариантов друг от друга.
 
+
+Ссылка на видео с демонстрацией результата
+
+https://drive.google.com/file/d/1EtyRXa70UDjFAzsbCYOLW9cCn8J1TfRy/view?usp=share_link
+
 ## Как проверить
 Убедитесь, что установлен Node.js 18+. В папке с задачей выполните
 ```bash
@@ -12,5 +17,8 @@ node test.js
 Ожидаемый результат
 OK: rules, invitation isolation, complete game, receipt, persistence
 
+
+
 Ссылка на видео с демонстрацией результата
+
 https://drive.google.com/file/d/1EtyRXa70UDjFAzsbCYOLW9cCn8J1TfRy/view?usp=share_link
